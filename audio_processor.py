@@ -29,6 +29,8 @@ async def process_audio(sink, channel: discord.TextChannel, self, *args):
     for user_id, audio in sink.audio_data.items():
         audio.file.seek(0)
         files.append(discord.File(audio.file, filename=f"{user_id}.wav"))
+        if not os.path.exists("tempAudios"):
+            os.makedirs("tempAudios")
         with tempfile.NamedTemporaryFile(dir="tempAudios", suffix=f".{sink.encoding}", delete=False) as temp_file:
             audio.file.seek(0)  # reset file pointer to beginning
             temp_file.write(audio.file.read())
