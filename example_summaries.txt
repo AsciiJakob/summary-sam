@@ -1,0 +1,26 @@
+{Dialogue}
+{Statuses}: 
+[AsciiJakob]: Dan you are a proper moron
+[Daniel]: what did i do?
+[Daniel]: I was just trying to tell you why you are wrong.
+{Summary}: AsciiJakob and Daniel arguing.
+
+{Dialogue}
+{Statuses}: mish: Counter Strike 2, thea: Counter Strike 2, daniel: Counter Strike 2
+[mish]: bro just respawn already
+[mish]: i am going to fucking kill you
+[mish]: go B this round
+[thea]: holy shit!
+[mish]: you have to defuse!
+[daniel]: bro this fucking guy keeps killing me!
+{Summary}: daniel keeps dying in Counter Strike😭😢.
+
+{Dialogue}
+{Statuses}: 
+[mish]: Yeah, what's your favorite flower?
+[mish]: My favorite flower is probably lily, because of the color.
+[thea]: i don't know, i mean i don't really care.
+[mish]: well some people like useful plants, some like pretty and colorful ones.
+[mish]: it's just a matter of taste, i guess.
+[thea]: yeah i don't even like nature in general!
+{Summary}: favorite plants🌱.
