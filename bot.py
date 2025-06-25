@@ -67,6 +67,7 @@ class Sam(commands.Cog):
             vc = await channel.connect()
             connections.update({ctx.guild.id: vc})
 
+        self.join_command_channel_id = ctx.message.channel.id
         if ctx.guild.id not in summarize_loop_tasks:
             print("creating summarize loop")
             task = self.bot.loop.create_task(self.summarize_loop(ctx))

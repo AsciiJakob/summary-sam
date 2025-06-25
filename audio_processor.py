@@ -75,13 +75,14 @@ async def process_audio(sink, channel: discord.TextChannel, self, *args):
     print("compiled transcript. Transcription string:\n", transcriptStr)
     try:
         message = f"**__Transcript__** ({round(time.time()-transcription_start, 2)}s):\n{transcriptStr}"
-        if len(message) > 2000:
-            print("transcript too long for normal message.")
-            bytes = BytesIO(message.encode("utf-8"))
-            await bot.get_channel(self.join_command_channel_id).send(file=discord.File(fp=bytes, filename="message.txt"), silent=True)
-        else:
-            print("sending message")
-            await bot.get_channel(self.join_command_channel_id).send(content=message, silent=True)
+        if config.sendTranscripts:
+            if len(message) > 2000:
+                print("transcript too long for normal message.")
+                bytes = BytesIO(message.encode("utf-8"))
+                await bot.get_channel(self.join_command_channel_id).send(file=discord.File(fp=bytes, filename="message.txt"), silent=True)
+            else:
+                print("sending message")
+                await bot.get_channel(self.join_command_channel_id).send(content=message, silent=True)
     except Exception as e:
         print("Failed to send message, error:", e)
 
@@ -94,4 +95,5 @@ async def process_audio(sink, channel: discord.TextChannel, self, *args):
 
     # await bot.voice_clients[0].channel.edit(status=summary)
     await bot.voice_clients[0].channel.set_status(summary)
-    await bot.get_channel(self.join_command_channel_id).send(content=f"**__Summary__ ({config.model_name} {round(time.time()-summarize_start, 2)}s): {summary}**")
+    if config.sendTranscripts:
+        await bot.get_channel(self.join_command_channel_id).send(content=f"**__Summary__ ({config.model_name} {round(time.time()-summarize_start, 2)}s): {summary}**")
