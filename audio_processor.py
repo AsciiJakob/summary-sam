@@ -95,5 +95,5 @@ async def process_audio(sink, channel: discord.TextChannel, self, *args):
 
     # await bot.voice_clients[0].channel.edit(status=summary)
     await bot.voice_clients[0].channel.set_status(summary)
-    if config.sendTranscripts:
+    if config.sendSummaries:
         await bot.get_channel(self.join_command_channel_id).send(content=f"**__Summary__ ({config.model_name} {round(time.time()-summarize_start, 2)}s): {summary}**")

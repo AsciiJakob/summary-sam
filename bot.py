@@ -76,6 +76,7 @@ class Sam(commands.Cog):
 
     async def summarize_loop(self, ctx: commands.Context):
         channel = ctx.channel
+        print(f"waiting for {config.sleepTime} seconds.")
         await asyncio.sleep(config.sleepTime)
 
         try:
@@ -97,6 +98,7 @@ class Sam(commands.Cog):
 
                 vc.start_recording(discord.sinks.WaveSink(), on_recording_ended, channel)
                 await asyncio.sleep(config.contextTime)
+                print(f"recorded for {config.contextTime} seconds.")
                 vc.stop_recording()
                 await recording_done.wait()
 
