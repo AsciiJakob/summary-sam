@@ -75,6 +75,7 @@ class Sam(commands.Cog):
 
     async def summarize_loop(self, ctx: commands.Context):
         channel = ctx.channel
+        await asyncio.sleep(config.sleepTime)
 
         try:
             while True:

@@ -1,6 +1,5 @@
 from lm_llama_3_2_1B import summarize_transcript
 
-# summarize_transcript("[hebbian]: hello\n[misha]: good evening hebbian!")
 with open("testText.txt", 'r') as file:
     testText = file.read()
 
